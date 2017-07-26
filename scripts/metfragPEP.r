@@ -63,7 +63,7 @@ passatuttoPath<-gsub(pattern = "OUTPUTFILE",
 
 system(passatuttoPath)
 
-PEPscores<-read.table(file = paste(directoryForResults,"/output.txt",sep=""),header = T,sep = "\t",quote="",stringsAsFactors = F)
+PEPscores<-read.table(file = paste(directoryForResults,"/output.txt",sep=""),header = T,sep = "\t",quote="",stringsAsFactors = F,comment.char = "")
 PEPscores<-PEPscores[,-c(1,2,3,4)]
 colnames(PEPscores)<-gsub(pattern = "METFRAG_",replacement = "",x = colnames(PEPscores),fixed = T)
 
