@@ -32,9 +32,14 @@ for(arg in args)
 }
 
 metfragRes<-read.csv(input)
-
-
-dataForPassatuttoTMP<-metfragRes[,c("CompoundName","Identifier","InChI",score)]
+CompoundNameCol<-""
+if("CompoundName"%in%colnames(metfragRes))
+{
+CompoundNameCol<-"CompoundName"
+}else{
+CompoundNameCol<-"Name"
+}
+dataForPassatuttoTMP<-metfragRes[,c(CompoundNameCol,"Identifier","InChI",score)]
 names(metfragRes)<-paste("METFRAG_",names(metfragRes),sep="")
 names(dataForPassatuttoTMP)<-c("query",	"target",	"target_inchi",	"score")
 
