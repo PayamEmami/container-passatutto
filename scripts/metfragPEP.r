@@ -31,7 +31,7 @@ for(arg in args)
   
 }
 
-metfragRes<-read.csv(input)
+metfragRes<-read.table(input,sep = "\t" ,comment.char = "")
 CompoundNameCol<-""
 if("CompoundName"%in%colnames(metfragRes))
 {
