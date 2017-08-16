@@ -46,7 +46,6 @@ passatutto enables the assessment of confidence in a match for metabolomics mass
 
 
 ## Publications
-
 - Kerstin Scheubert, Franziska Hufsky, Daniel Petras, Mingxun Wang, Louis-Felix Nothias, Kai Dührkop, Nuno Bandeira, Pieter C Dorrestein, Sebastian Böcker.
 Significance estimation enabling large scale untargeted metabolomics annotations.
 submitted
