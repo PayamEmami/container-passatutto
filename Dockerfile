@@ -6,7 +6,7 @@ LABEL software=Passatutto
 
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
-LABEL Description="Metaboilite pep score generator"
+LABEL Description="Metabolite pep score generator"
 
 
 
@@ -34,6 +34,10 @@ ADD passatutto/Passatutto /usr/local/bin/Passatutto
 
 ADD scripts/*.r /usr/local/bin/
 RUN chmod +x /usr/local/bin/*.r
+
+# Add testing to container
+ADD runTest1.sh /usr/local/bin/runTest1.sh
+RUN chmod +x /usr/local/bin/runTest1.sh
 
 # Define Entry point script
 #ENTRYPOINT ["java", "-cp", "/usr/local/bin/passatutto.jar"]
