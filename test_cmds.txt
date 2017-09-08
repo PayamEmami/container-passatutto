@@ -1,1 +1,1 @@
-java -verison
+java -version
