@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 LABEL software.version=201604
-LABEL version=201604
+LABEL version=0.1
 LABEL software=Passatutto
 
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
