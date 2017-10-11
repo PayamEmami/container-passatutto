@@ -5,7 +5,7 @@ apt-get update -y && apt-get install -y --no-install-recommends wget ca-certific
 
 # prepare test input files
 mkdir /tmp/testfiles
-wget -O /tmp/testfiles/test_case_candidates.csv https://github.com/phnmnl/container-passatutto/raw/develop/testfiles/test_case_metfrag.tsv
+wget -O /tmp/testfiles/test_case_candidates.csv https://github.com/phnmnl/container-passatutto/raw/develop/testfiles/test_case_metfrag.csv
 
 # perform test
 /usr/local/bin/metfragPEP.r input=/tmp/testfiles/test_case_candidates.csv score=FragmenterScore output=/tmp/testfiles/output.txt
