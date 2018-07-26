@@ -1,0 +1,1 @@
+java -cp /usr/local/bin/Passatutto/lib/* QValueEstimator

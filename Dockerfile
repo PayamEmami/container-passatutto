@@ -1,22 +1,13 @@
-FROM ubuntu:16.04
+FROM container-registry.phenomenal-h2020.eu/phnmnl/rbase:dev_v3.4.1-2xenial0_cv0.2.14
 
 LABEL software.version=201604
-LABEL version=201604
+LABEL version=0.1
 LABEL software=Passatutto
 
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
-LABEL Description="Metaboilite pep score generator"
+LABEL Description="Metabolite pep score generator"
 
-
-
-# Install packages for compilation
-RUN apt-get -y update
-RUN apt-get -y --no-install-recommends --fix-missing install make gcc gfortran
-RUN apt-get -y --no-install-recommends --fix-missing install g++ libnetcdf-dev 
-RUN apt-get -y --no-install-recommends --fix-missing install libxml2-dev libblas-dev 
-RUN apt-get -y --no-install-recommends --fix-missing install liblapack-dev
-RUN apt-get -y --no-install-recommends --fix-missing install r-base
 
 
 RUN R -e 'install.packages(c("R.utils","tools"),repos = "http://cran.us.r-project.org")' 
@@ -34,6 +25,10 @@ ADD passatutto/Passatutto /usr/local/bin/Passatutto
 
 ADD scripts/*.r /usr/local/bin/
 RUN chmod +x /usr/local/bin/*.r
+
+# Add testing to container
+ADD runTest1.sh /usr/local/bin/runTest1.sh
+RUN chmod +x /usr/local/bin/runTest1.sh
 
 # Define Entry point script
 #ENTRYPOINT ["java", "-cp", "/usr/local/bin/passatutto.jar"]
